@@ -1,0 +1,18 @@
+# ignored = ["github.com/mwitkow/go-proto-validators"]
+required = ["github.com/fullstorydev/grpcurl/cmd/grpcurl"]
+
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  version = "1.0.0"
+
+[[constraint]]
+  branch = "master"
+  name = "golang.org/x/net"
+
+[[constraint]]
+  name = "google.golang.org/grpc"
+  version = "1.11.1"
+
+[prune]
+  go-tests = true
+  unused-packages = true

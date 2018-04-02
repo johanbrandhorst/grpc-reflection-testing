@@ -1,0 +1,22 @@
+syntax="proto3";
+
+package example;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+option go_package = "github.com/johanbrandhorst/grpc-reflection-testing/proto;example";
+
+service UserService {
+    rpc AddUser(User) returns (Void) {}
+}
+
+message User {
+    uint32 id = 1 [
+        (validator.field) = {
+            int_gt: 0
+            human_error: "ID must a positive integer"
+        }
+    ];
+}
+
+message Void {}
